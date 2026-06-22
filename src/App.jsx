@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-//import DigitalClock from "./components/DigitalClock";
-import Products from "./components/Products";
+import DigitalClock from "./components/DigitalClock";
+//import Products from "./components/Products";
 
 
 
