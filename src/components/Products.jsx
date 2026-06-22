@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import '../App.css'
 
 function Products(){
     const[data,setData] = useState([])
@@ -17,22 +18,29 @@ function Products(){
       fetchData()
     },[])
     return(
-        <div>
-            <h1>All Products</h1>
+        <div className="products-container">
+            <h1>🛍️ All Products</h1>
+            <div className="products-grid">
             { 
                 data.map(item=>(
-                <div key={item.id}> {/*further update gani delete gaani cheyaniki key vadtham*/}
+                <div key={item.id} className="product-card"> {/*further update gani delete gaani cheyaniki key vadtham*/}
 
-                    <img src={item.image} alt="" />
+                    <img src={item.image} alt="{item.title}" />
                     <h1>{item.title}</h1>
                     <p>{item.description}</p>
-                    <h2>{item.price}</h2>
+                    <h2>Price: {item.price}</h2>
+                    <h2><span>Rating:</span>⭐ {item.rating.rate}</h2>
+                    <button className="add-btn">
+                        Add To Cart
+                    </button>
+
 
                 </div>
                 ))
                 
     
             }
+        </div>
         </div>
     )
 }
